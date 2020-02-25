@@ -1,0 +1,7 @@
+pipeline:
+  test:
+    image: node:10.19.0
+    commands:
+      - npm run test --quiet
+    when:
+      event: [push, pull_request]
