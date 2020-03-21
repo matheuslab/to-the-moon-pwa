@@ -1,68 +1,35 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# To the Moon - PWA
 
-## Available Scripts
+[![Build Status](https://cloud.drone.io/api/badges/matheuslab/to-the-moon-pwa/status.svg)](https://cloud.drone.io/matheuslab/to-the-moon-pwa)
 
-In the project directory, you can run:
+<p align="center">
+  <img src="https://steamcdn-a.akamaihd.net/steam/apps/206440/capsule_616x353.jpg?t=1530767611" alt="to-the-moon-pwa" align="center" />
+</p>
 
-### `npm start`
+### Installing
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### On the terminal:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Clone the project and run the following command:
+```
+npm install
+```
+### Run project
 
-### `npm test`
+Running the project
+```
+cd <path>/to-the-moon-pwa/
+npm run start
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Built With
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* [Create React App](https://github.com/facebook/create-react-app) - Set up a modern web app by running one command.
+* [Node Package Manager](https://www.npmjs.com/) - Package manager for the Node JavaScript platform.
+* [ESLint](https://eslint.org/) - Find and fix problems in your JavaScript code.
+* [Jest](https://jestjs.io/en/) - Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
+* [Babel](https://babeljs.io/) - Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments.
+* [Drone](https://drone.io/) - Automate Software Testing and Delivery.
+* [EditorConfig](https://editorconfig.org/) - EditorConfig helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs.
+* [Prettier](https://prettier.io/) - Prettier is an opinionated code formatter.
+* [Enzyme](https://enzymejs.github.io/enzyme/) - Enzyme is a JavaScript Testing utility for React that makes it easier to test your React Components' output. You can also manipulate, traverse, and in some ways simulate runtime given the output.
