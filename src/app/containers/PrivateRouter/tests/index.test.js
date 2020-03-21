@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { shallow } from 'enzyme';
 import {
@@ -6,12 +5,14 @@ import {
 } from 'react-router-dom';
 
 import PrivateRoute from '../index';
-import { RedirectPage } from '../RedirectPage';
+import getRenderComponent from '../getRenderComponent';
 
 const defaultProps = {
   Component: <div>bla</div>,
   bla: 'ble',
 };
+
+jest.mock('../getRenderComponent');
 
 const render = (props) => shallow(<PrivateRoute {...defaultProps} {...props} />);
 const renderedComponent = render();
@@ -25,7 +26,7 @@ describe('<App />', () => {
     it('should render Route with correct props', () => {
       const routeProps = renderedComponent.find(Route).props();
       expect(routeProps.bla).toEqual('ble');
-      expect(routeProps.render).toEqual(<RedirectPage Component={defaultProps.Component} />);
+      expect(routeProps.render).toEqual(getRenderComponent(defaultProps.Component));
     });
   });
 });
