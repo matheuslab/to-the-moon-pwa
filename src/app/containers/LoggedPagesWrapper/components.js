@@ -1,4 +1,21 @@
 import React from 'react';
+import BrightnessAutoIcon from '@material-ui/icons/BrightnessAuto';
+import { FormattedMessage } from 'react-intl';
+import Typography from './Typography';
 
-export const homeTitle = () => <h1> Hello World (logged or not)</h1>;
-export const appTitle = () => <h1>You are logged</h1>;
+import messages from './messages';
+
+export const homeTitle = () => (
+  <React.Fragment>
+    <BrightnessAutoIcon color="primary" />
+    <Typography textDecoration="underline">
+      <FormattedMessage {...messages.title} />
+    </Typography>
+  </React.Fragment>
+);
+
+export const appTitle = () => (
+  <Typography>
+    <FormattedMessage {...messages.loggedPageTitle} />
+  </Typography>
+);
