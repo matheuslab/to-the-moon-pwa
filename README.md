@@ -33,3 +33,7 @@ npm run start
 * [EditorConfig](https://editorconfig.org/) - EditorConfig helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs.
 * [Prettier](https://prettier.io/) - Prettier is an opinionated code formatter.
 * [Enzyme](https://enzymejs.github.io/enzyme/) - Enzyme is a JavaScript Testing utility for React that makes it easier to test your React Components' output. You can also manipulate, traverse, and in some ways simulate runtime given the output.
+* [Material-UI](https://material-ui.com/) - React components for faster and easier web development.
+* [React-Intl](https://github.com/formatjs/react-intl) - Internationalize React apps.
+* [Styled Components](https://styled-components.com/) - Visual primitives for the component age.
+* [Jest Styled Components](https://github.com/styled-components/jest-styled-components) - A set of utilities for testing Styled Components with Jest. This package improves the snapshot testing experience and provides a brand new matcher to make expectations on the style rules.

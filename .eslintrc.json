@@ -17,6 +17,6 @@
       "react/jsx-props-no-spreading": "off",
       "import/no-named-as-default": "off",
       "import/prefer-default-export": "off",
-      "react/prop-types": "off"
+      "react/jsx-fragments": "off"
     }
   }
