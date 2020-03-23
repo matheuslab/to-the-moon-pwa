@@ -1,1 +1,1 @@
-export const TEMPLATE = 'TEMPLATE';
+export const TEMPLATE = 'src.app.containers.Template.TEMPLATE';

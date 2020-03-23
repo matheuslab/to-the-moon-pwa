@@ -6,7 +6,9 @@ import { Provider } from 'react-redux';
 import ThemeProvider from './utils/Theme/ThemeProvider';
 import { theme } from './utils/Theme/theme';
 import App from './app/containers/App/index';
-import store from './store';
+import initializeStore from './reducer/initializeStore';
+
+const store = initializeStore();
 
 const MOUNT_NODE = document.getElementById('root');
 

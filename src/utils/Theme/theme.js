@@ -58,7 +58,7 @@ export const theme = {
   },
   shape: {
     borderRadius: 8,
-  }
+  },
 };
 
 export default createMuiTheme(theme);
