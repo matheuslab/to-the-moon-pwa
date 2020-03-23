@@ -1,6 +1,6 @@
 import { TEMPLATE } from './constants';
 
-const initialState = {
+export const initialState = {
   name: 'Matheus',
 };
 

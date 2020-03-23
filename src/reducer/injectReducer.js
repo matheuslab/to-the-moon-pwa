@@ -1,12 +1,7 @@
-import { createStore, combineReducers } from 'redux';
-
+import { createStore } from 'redux';
+import createReducer from './rootReducer';
 // Define the Reducers that will always be present in the application
 const staticReducers = {};
-
-const createReducer = (asyncReducers) => combineReducers({
-  ...staticReducers,
-  ...asyncReducers,
-});
 
 // Configure the store
 export const configureStore = (initialState) => {
@@ -19,7 +14,7 @@ export const configureStore = (initialState) => {
   // This function adds the async reducer, and creates a new combined reducer
   store.injectReducer = (key, asyncReducer) => {
     store.asyncReducers[key] = asyncReducer;
-    store.replaceReducer(createReducer(store.asyncReducers));
+    store.replaceReducer(createReducer({ ...store.asyncReducers, ...staticReducers }));
   };
 
   // Return the modified store

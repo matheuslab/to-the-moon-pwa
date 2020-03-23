@@ -18,11 +18,11 @@ Template.propTypes = {
   template: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   name: state.templateReducer.name,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   template: () => dispatch(templateAction()),
 });
 

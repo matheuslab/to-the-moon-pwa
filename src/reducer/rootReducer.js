@@ -4,8 +4,8 @@ import { combineReducers } from 'redux';
  * @param {Object} - key/value of reducer functions
  */
 
-const createReducer = (asyncReducers) => combineReducers({
-  ...asyncReducers,
+export const createReducer = (reducerList) => combineReducers({
+  ...reducerList,
 });
 
 export default createReducer;
