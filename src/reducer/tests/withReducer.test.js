@@ -1,26 +1,35 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import withReducer from '../withReducer';
-import { templateReducer as reducer } from '../../app/containers/Template/reducer';
+import { identity } from 'lodash';
+import { Provider } from 'react-redux';
+import { withReducer } from '../withReducer';
 import initializeStore from '../initializeStore';
 
-const Component = () => null;
+const Component = jest.fn();
 
 let store;
 let ComponentWithReducer;
+let props;
+let renderedComponent;
 
 beforeEach(() => {
   store = initializeStore();
-  ComponentWithReducer = withReducer('test', reducer)(Component);
+  ComponentWithReducer = withReducer('test', identity)(Component);
+  props = { testProp: 'test' };
+  renderedComponent = shallow(
+    <Provider store={store}>
+      <ComponentWithReducer {...props} />
+    </Provider>, {
+      context: { store },
+    },
+  );
 });
 
-xdescribe('withReducer', () => {
+describe('withReducer', () => {
   it('should propagate props', () => {
-    const props = { testProp: 'test' };
-    const renderedComponent = shallow(<ComponentWithReducer {...props} />, {
-      context: { store },
-    });
-    expect(store).toBe('test');
-    expect(renderedComponent.prop('testProp')).toBe('test');
+    expect(renderedComponent.dive().props()).toEqual(props);
+    // TODO:
+    // how test render() return here
+    // how to test that store.injectReducer(key, reducer) was called here
   });
 });
