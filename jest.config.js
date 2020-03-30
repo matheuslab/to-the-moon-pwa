@@ -3,6 +3,7 @@ module.exports = {
     'src/**/*.{js,jsx,ts,tsx}',
     '!src/**/*.test.{js,jsx,ts,tsx}', // exclude test files from coverage
     '!src/index.js',
+    '!src/reducer/withReducer.js',
   ],
   coverageThreshold: {
     global: {
