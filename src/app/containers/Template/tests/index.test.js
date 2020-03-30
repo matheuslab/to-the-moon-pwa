@@ -3,7 +3,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Button from '@material-ui/core/Button';
 import { template as templateAction } from '../actions';
-import { Template, mapDispatchToProps, mapStateToProps } from '../index';
+import { Template, mapDispatchToProps } from '../index';
 
 const defaultProps = {
   name: 'bla',
@@ -21,18 +21,6 @@ describe('Template', () => {
         {defaultProps.name}
       </Button>,
     )).toBeTruthy();
-  });
-
-  describe('mapStateToProps', () => {
-    const state = {
-      templateReducer: {
-        name: 'Robson',
-      },
-    };
-
-    it('should get name from state', () => {
-      expect(mapStateToProps(state)).toEqual({ name: 'Robson' });
-    });
   });
 
   describe('mapDispatchToProps', () => {
