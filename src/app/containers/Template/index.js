@@ -7,7 +7,7 @@ import { createStructuredSelector } from 'reselect';
 import { template as templateAction } from './actions';
 import withReducer from '../../../reducer/withReducer';
 import { makeSelectName } from './selectors';
-import templateReducer from './reducer';
+import reducer from './reducer';
 
 export const Template = ({ name, template }) => (
   <Button onClick={template}>
@@ -29,6 +29,6 @@ export const mapDispatchToProps = (dispatch) => ({
 });
 
 export default compose(
-  withReducer('templateReducer', templateReducer),
+  withReducer('templateReducer', reducer),
   connect(mapStateToProps, mapDispatchToProps),
 )(Template);

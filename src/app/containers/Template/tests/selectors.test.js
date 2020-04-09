@@ -3,10 +3,14 @@ import {
   makeSelectName,
 } from '../selectors';
 
+import { key } from '../constants';
+
 
 describe('selectors', () => {
   const mockState = fromJS({
-    name: 'matheus',
+    [key]: {
+      name: 'matheus',
+    },
   });
 
 

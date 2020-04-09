@@ -5,7 +5,7 @@ export const initialState = fromJS({
   name: 'Matheus',
 });
 
-export const templateReducer = (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
   if (action.type === TEMPLATE) {
     return state.setIn(['name'], 'Matheus Martins');
   }
@@ -13,4 +13,4 @@ export const templateReducer = (state = initialState, action) => {
   return state;
 };
 
-export default templateReducer;
+export default reducer;

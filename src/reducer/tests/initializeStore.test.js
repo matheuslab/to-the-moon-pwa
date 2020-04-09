@@ -6,8 +6,10 @@ import initializeStore from '../initializeStore';
 describe('initializeStore', () => {
   let store;
 
-  beforeAll(() => {
+  beforeEach(() => {
+    jest.clearAllMocks();
     store = initializeStore();
+    store.replaceReducer = jest.fn();
   });
 
   describe('asyncReducers', () => {

@@ -1,4 +1,5 @@
 import { createStore, compose } from 'redux';
+import { Map } from 'immutable';
 import createReducer from './rootReducer';
 
 // If Redux DevTools Extension is installed use it, otherwise use Redux compose
@@ -9,7 +10,8 @@ const composeEnhancers = (typeof window !== 'undefined'
   /* eslint-enable */
 
 const initializeStore = () => {
-  const store = createStore(createReducer(), composeEnhancers());
+  const initialState = Map({});
+  const store = createStore(createReducer, initialState, composeEnhancers());
 
   store.asyncReducers = {};
   store.injectReducer = (key, reducer) => {

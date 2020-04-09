@@ -1,12 +1,9 @@
 import { createSelector } from 'reselect';
+import { key } from './constants';
 
-const selectTemplateName = (state) => {
-  console.log('state is equal to ', state);
+const selectSlice = (state) => state.getIn([key]);
 
-  return (
-    state.getIn(['name'])
-  );
-};
+const selectTemplateName = (state) => selectSlice(state).getIn(['name']);
 
 export const makeSelectName = () => createSelector(
   selectTemplateName,

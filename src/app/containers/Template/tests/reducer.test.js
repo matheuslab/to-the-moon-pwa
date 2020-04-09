@@ -1,4 +1,3 @@
-import { fromJS } from 'immutable';
 import reducer, { initialState } from '../reducer';
 import { TEMPLATE } from '../constants';
 
