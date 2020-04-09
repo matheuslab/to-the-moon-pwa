@@ -10,13 +10,8 @@ describe('reducer', () => {
   describe('TEMPLATE action dispatch', () => {
     it('should return state and name equals to Matheus Martins '
     + 'if action type is TEMPLATE', () => {
-      const state = {
-        corona: true,
-      };
-      expect(reducer(state, { type: TEMPLATE })).toEqual({
-        ...state,
-        name: 'Matheus Martins',
-      });
+      expect(reducer(initialState, { type: TEMPLATE })
+        .getIn(['name'])).toEqual('Matheus Martins');
     });
 
     it('should return only state if action type is not TEMPLATE', () => {

@@ -1,16 +1,20 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from 'redux-immutable';
 import createReducer from '../rootReducer';
 
-jest.mock('redux');
+jest.mock('redux-immutable');
 
 describe('rootReducer', () => {
   it('should call combineReducers with asyncReducers passed as prop', () => {
-    const reducerList = {
+    const asyncReducers = {
       reducers: {},
     };
-    createReducer(reducerList);
+    const staticReducers = {};
+
+    createReducer(asyncReducers);
+
     expect(combineReducers).toHaveBeenCalledWith({
-      ...reducerList,
+      ...asyncReducers,
+      ...staticReducers,
     });
   });
 });

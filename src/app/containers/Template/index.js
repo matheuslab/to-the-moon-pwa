@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
+import { createStructuredSelector } from 'reselect';
 import { template as templateAction } from './actions';
 import withReducer from '../../../reducer/withReducer';
-import templateReducer from './reducer';
+import { makeSelectName } from './selectors';
+import reducer from './reducer';
 
 export const Template = ({ name, template }) => (
   <Button onClick={template}>
@@ -18,8 +20,8 @@ Template.propTypes = {
   template: PropTypes.func.isRequired,
 };
 
-export const mapStateToProps = (state) => ({
-  name: state.templateReducer.name,
+export const mapStateToProps = createStructuredSelector({
+  name: makeSelectName(),
 });
 
 export const mapDispatchToProps = (dispatch) => ({
@@ -27,6 +29,6 @@ export const mapDispatchToProps = (dispatch) => ({
 });
 
 export default compose(
-  withReducer('templateReducer', templateReducer),
+  withReducer('templateReducer', reducer),
   connect(mapStateToProps, mapDispatchToProps),
 )(Template);
