@@ -5,10 +5,10 @@ export const scope = 'src.app.containers.LoggedPagesWrapper';
 export default defineMessages({
   title: {
     id: `${scope}.title`,
-    defaultMessage: 'Hello World (logged or not)',
+    defaultMessage: 'Olá Mundo (logado ou não)',
   },
   loggedPageTitle: {
     id: `${scope}.loggedPageTitle`,
-    defaultMessage: 'You are logged',
+    defaultMessage: 'Você está logado',
   },
 });
