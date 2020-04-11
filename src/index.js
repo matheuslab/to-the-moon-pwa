@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { IntlProvider } from 'react-intl';
 import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router/immutable';
@@ -9,6 +8,8 @@ import ThemeProvider from './utils/Theme/ThemeProvider';
 import { theme } from './utils/Theme/theme';
 import App from './app/containers/App/index';
 import initializeStore from './reducer/initializeStore';
+import LanguageProvider from './app/containers/LanguageProvider';
+import translationMessages from './translations/translationMessages';
 
 const initialState = {};
 const store = initializeStore(initialState, history);
@@ -16,14 +17,15 @@ const store = initializeStore(initialState, history);
 const MOUNT_NODE = document.getElementById('root');
 
 ReactDOM.render(
-  <IntlProvider locale="en">
-    <ThemeProvider theme={createMuiTheme(theme)}>
-      <Provider store={store}>
+
+  <ThemeProvider theme={createMuiTheme(theme)}>
+    <Provider store={store}>
+      <LanguageProvider messages={translationMessages}>
         <ConnectedRouter history={history}>
           <App />
         </ConnectedRouter>
-      </Provider>
-    </ThemeProvider>
-  </IntlProvider>,
+      </LanguageProvider>
+    </Provider>
+  </ThemeProvider>,
   MOUNT_NODE,
 );

@@ -1,6 +1,8 @@
 module.exports = {
   collectCoverageFrom: [
     'src/**/*.{js,jsx,ts,tsx}',
+    '!src/**/pt.js',
+    '!src/**/en.js',
     '!src/**/*.test.{js,jsx,ts,tsx}', // exclude test files from coverage
     '!src/index.js',
     '!src/reducer/withReducer.js',

@@ -5,8 +5,6 @@ import {
 } from 'react-router-dom';
 import getRenderComponent from './getRenderComponent';
 
-import RedirectPage from './RedirectPage';
-
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
@@ -14,8 +12,8 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
   />
 );
 
-RedirectPage.propTypes = {
-  Component: PropTypes.func.isRequired,
+PrivateRoute.propTypes = {
+  component: PropTypes.func.isRequired,
 };
 
 export default PrivateRoute;
