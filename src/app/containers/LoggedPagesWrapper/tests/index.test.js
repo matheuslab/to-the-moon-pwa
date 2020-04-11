@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import {
-  BrowserRouter, Route, Switch,
+  Route, Switch,
 } from 'react-router-dom';
 import PrivateRoute from '../../PrivateRouter';
 import Template from '../../Template';
@@ -18,7 +18,6 @@ const renderedComponent = render();
 
 describe('<LoggesPagesWrapper />', () => {
   it('should render Wrapper correctly', () => {
-    expect(renderedComponent.find(BrowserRouter)).toHaveLength(1);
     expect(renderedComponent.find(Switch)).toHaveLength(1);
     expect(renderedComponent.find(Route)).toHaveLength(2);
     expect(renderedComponent.find(PrivateRoute)).toHaveLength(1);

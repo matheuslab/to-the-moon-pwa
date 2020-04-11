@@ -1,8 +1,10 @@
 import { createStore, compose, applyMiddleware } from 'redux';
-import { Map } from 'immutable';
+import { fromJS } from 'immutable';
 import thunk from 'redux-thunk';
 import { middleware as reduxPackMiddleware } from 'redux-pack';
+import { routerMiddleware } from 'connected-react-router/immutable';
 import createReducer from './rootReducer';
+
 
 // If Redux DevTools Extension is installed use it, otherwise use Redux compose
 
@@ -11,15 +13,14 @@ const composeEnhancers = (typeof window !== 'undefined'
   && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
   /* eslint-enable */
 
-const initializeStore = () => {
-  const middlewares = [thunk, reduxPackMiddleware];
+const initializeStore = (initialState = {}, history) => {
+  const middlewares = [thunk, reduxPackMiddleware, routerMiddleware(history)];
 
   const enhancers = [applyMiddleware(...middlewares)];
 
-  const initialState = Map({});
   const store = createStore(
-    createReducer,
-    initialState,
+    createReducer(),
+    fromJS(initialState),
     composeEnhancers(...enhancers),
   );
 
