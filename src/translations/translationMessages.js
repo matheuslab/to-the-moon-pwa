@@ -1,6 +1,6 @@
 
-import { en } from './translations/en';
-import { pt } from './translations/pt';
+import { en } from './en';
+import { pt } from './pt';
 
 export const translationMessages = {
   en,

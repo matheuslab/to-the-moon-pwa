@@ -7,9 +7,8 @@ import { IntlProvider } from 'react-intl';
 import { DEFAULT_LOCALE } from './constants';
 
 import { makeSelectLocale } from './selectors';
-import { changeLocale as changeLocaleAction } from './actions';
 
-export const LanguageProvider = ({ locale, children, messages }) => (
+export const LanguageProvider = ({ locale, messages, children }) => (
   <IntlProvider
     locale={locale}
     key={locale}
@@ -33,11 +32,8 @@ export const mapStateToProps = createStructuredSelector({
   locale: makeSelectLocale(),
 });
 
-export const mapDispatchToProps = (dispatch) => ({
-  changeLocale: (languageLocale) => dispatch(changeLocaleAction(languageLocale)),
-});
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
+  null,
 )(LanguageProvider);

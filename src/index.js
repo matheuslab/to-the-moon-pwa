@@ -9,7 +9,7 @@ import { theme } from './utils/Theme/theme';
 import App from './app/containers/App/index';
 import initializeStore from './reducer/initializeStore';
 import LanguageProvider from './app/containers/LanguageProvider';
-import translationMessages from './translationMessages';
+import translationMessages from './translations/translationMessages';
 
 const initialState = {};
 const store = initializeStore(initialState, history);

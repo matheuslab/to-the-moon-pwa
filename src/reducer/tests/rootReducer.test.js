@@ -2,6 +2,7 @@ import { combineReducers } from 'redux-immutable';
 import { connectRouter } from 'connected-react-router/immutable';
 import createReducer from '../rootReducer';
 import history from '../../utils/history';
+import { reducer as LanguageProviderReducer } from '../../app/containers/LanguageProvider/reducer';
 
 jest.mock('redux-immutable');
 jest.mock('connected-react-router/immutable');
@@ -11,7 +12,7 @@ describe('rootReducer', () => {
     const asyncReducers = {
       reducers: {},
     };
-    const staticReducers = {};
+    const staticReducers = { language: LanguageProviderReducer };
 
     createReducer(asyncReducers);
 

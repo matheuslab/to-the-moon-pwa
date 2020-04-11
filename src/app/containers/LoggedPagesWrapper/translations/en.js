@@ -1,6 +1,5 @@
-export const scope = 'src.app.containers.LoggedPagesWrapper';
+import { templateMessages } from '../../Template/translations/en';
 
-export const LoggedPagesWrapperMessages = {
-  [`${scope}.title`]: 'Hello World (logged or not)',
-  [`${scope}.loggedPageTitle`]: 'You are logged',
+export const loggedPagesWrapperMessages = {
+  ...templateMessages,
 };
