@@ -1,6 +1,8 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import { fromJS } from 'immutable';
 import thunk from 'redux-thunk';
+import createSentryMiddleware from 'redux-sentry-middleware';
+import * as Sentry from '@sentry/browser';
 import { middleware as reduxPackMiddleware } from 'redux-pack';
 import { routerMiddleware } from 'connected-react-router/immutable';
 import createReducer from './rootReducer';
@@ -14,7 +16,11 @@ const composeEnhancers = (typeof window !== 'undefined'
   /* eslint-enable */
 
 const initializeStore = (initialState = {}, history) => {
-  const middlewares = [thunk, reduxPackMiddleware, routerMiddleware(history)];
+  const middlewares = [
+    thunk,
+    reduxPackMiddleware,
+    routerMiddleware(history),
+    createSentryMiddleware(Sentry)];
 
   const enhancers = [applyMiddleware(...middlewares)];
 
