@@ -8,16 +8,22 @@ import { DEFAULT_LOCALE } from './constants';
 
 import { makeSelectLocale } from './selectors';
 
-export const LanguageProvider = ({ locale, messages, children }) => (
-  <IntlProvider
-    locale={locale}
-    key={locale}
-    defaultLocale={DEFAULT_LOCALE}
-    messages={messages[locale]}
-  >
-    {React.Children.only(children)}
-  </IntlProvider>
-);
+export const LanguageProvider = ({ locale, messages, children }) => {
+  const mergedMessages = { ...messages[DEFAULT_LOCALE], ...messages[locale] };
+
+  return (
+    <IntlProvider
+      locale={locale}
+      key={locale}
+      defaultLocale={DEFAULT_LOCALE}
+      messages={mergedMessages}
+    >
+      {React.Children.only(children)}
+    </IntlProvider>
+
+  );
+};
+
 
 LanguageProvider.propTypes = {
   messages: PropTypes.shape({
