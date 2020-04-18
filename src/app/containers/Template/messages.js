@@ -5,6 +5,5 @@ export const scope = 'src.app.containers.Template';
 export default defineMessages({
   changeLocaleButton: {
     id: `${scope}.changeLocaleButton`,
-    defaultMessage: 'Mudar linguagem para EN',
   },
 });
