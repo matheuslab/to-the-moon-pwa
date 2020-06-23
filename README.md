@@ -37,3 +37,5 @@ npm run start
 * [React-Intl](https://github.com/formatjs/react-intl) - Internationalize React apps.
 * [Styled Components](https://styled-components.com/) - Visual primitives for the component age.
 * [Jest Styled Components](https://github.com/styled-components/jest-styled-components) - A set of utilities for testing Styled Components with Jest. This package improves the snapshot testing experience and provides a brand new matcher to make expectations on the style rules.
+* [Axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js.
+* [Loadable Components](https://loadable-components.com/) - React code splitting made easy.

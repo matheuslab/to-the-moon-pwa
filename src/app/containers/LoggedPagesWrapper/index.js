@@ -3,9 +3,9 @@ import {
   Switch,
 } from 'react-router-dom';
 import PrivateRoute from '../PrivateRouter';
-import Template from '../Template';
+import Template from '../Template/Loadable';
 
-const LoggedPagesWrapper = () => (
+export const LoggedPagesWrapper = () => (
   <Switch>
     <PrivateRoute exact path="/" component={Template} />
   </Switch>

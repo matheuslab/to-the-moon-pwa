@@ -4,7 +4,7 @@ import {
   Switch,
 } from 'react-router-dom';
 import PrivateRoute from '../../PrivateRouter';
-import Template from '../../Template';
+import Template from '../../Template/Loadable';
 import LoggedPagesWrapper from '../index';
 
 const defaultProps = {
@@ -15,8 +15,8 @@ const render = (props) => shallow(<LoggedPagesWrapper {...defaultProps} {...prop
 
 const renderedComponent = render();
 
-describe('<LoggesPagesWrapper />', () => {
-  it('should render Wrapper correctly', () => {
+describe('<LoggedPagesWrapper />', () => {
+  it('should render Components correctly', () => {
     expect(renderedComponent.find(Switch)).toHaveLength(1);
     expect(renderedComponent.find(PrivateRoute)).toHaveLength(1);
   });

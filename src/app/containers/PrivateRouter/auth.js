@@ -1,5 +1,10 @@
-// logic of authentication will be here, on a near future
+import { TOKEN } from './constants';
 
-export const isAuthenticated = () => true;
+export const isAuthenticated = () => {
+  if (sessionStorage.getItem(TOKEN) !== null) {
+    return true;
+  }
+  return false;
+};
 
 export default isAuthenticated;

@@ -5,13 +5,13 @@ import {
 } from 'react-router-dom';
 
 import { isAuthenticated } from './auth';
-import { HOME_PAGE } from './constants';
+import { LOGIN_PAGE } from '../../routes';
 
 export const RedirectPage = ({ Component, routeProps }) => (
   isAuthenticated() ? (
     <Component {...routeProps} />
   ) : (
-    <Redirect to={{ pathname: HOME_PAGE, state: { from: routeProps.location } }} />
+    <Redirect to={{ pathname: LOGIN_PAGE, state: { from: routeProps.location } }} />
   )
 );
 

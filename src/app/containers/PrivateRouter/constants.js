@@ -1,1 +1,1 @@
-export const HOME_PAGE = '/';
+export const TOKEN = 'token';

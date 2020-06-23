@@ -2,12 +2,12 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import App from '../index';
-import LoggedPagesWrapper from '../../LoggedPagesWrapper';
+import Routes from '../Routes';
 
 const render = () => shallow(<App />);
 
 describe('<App />', () => {
   it('should return LoggedPagesWrapper component', () => {
-    expect(render().find(LoggedPagesWrapper)).toHaveLength(1);
+    expect(render().find(Routes)).toHaveLength(1);
   });
 });
