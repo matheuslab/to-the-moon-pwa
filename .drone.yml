@@ -10,7 +10,7 @@ pipeline:
     image: node:10.19.0
     commands:
       - git fetch origin master
-      - FILES_CHANGED=$(git diff --name-only origin/master | grep '.js*$' || true)
+      - FILES_CHANGED=$(git diff --name-only --diff-filter=ACMRTUXB origin/master | grep '.js*$' || true)
       - npm run lint $FILES_CHANGED --unsafe-perm --quiet
     when:
       event: [push]

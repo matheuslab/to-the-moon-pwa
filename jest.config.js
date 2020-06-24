@@ -5,7 +5,8 @@ module.exports = {
     '!src/**/en.js',
     '!src/**/*.test.{js,jsx,ts,tsx}', // exclude test files from coverage
     '!src/index.js',
-    '!src/reducer/withReducer.js',
+    '!src/reducer/withReducer.js', // TO DO: create a test case to this file
+    '!src/**/Loadable.{js,jsx,ts,tsx}',
   ],
   coverageThreshold: {
     global: {

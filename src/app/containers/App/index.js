@@ -1,7 +1,7 @@
 import React from 'react';
 
-import LoggedPagesWrapper from '../LoggedPagesWrapper';
+import Routes from './Routes';
 
-const App = () => <LoggedPagesWrapper />;
+const App = () => <Routes />;
 
 export default App;

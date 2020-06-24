@@ -1,7 +1,6 @@
-import {
-  loggedPagesWrapperMessages,
-} from '../app/containers/LoggedPagesWrapper/translations/pt';
+import { templateMessages } from '../app/containers/Template/translations/pt';
 
 export const pt = {
-  ...loggedPagesWrapperMessages,
+  // all imports of other pt files goes here
+  ...templateMessages,
 };

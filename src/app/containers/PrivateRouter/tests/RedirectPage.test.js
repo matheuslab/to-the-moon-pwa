@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import {
   Redirect,
 } from 'react-router-dom';
+import { LOGIN_PAGE } from '../../../routes';
 
 import { RedirectPage } from '../RedirectPage';
 
@@ -34,7 +35,7 @@ describe('<RedirectPage />', () => {
   it('should redirect if user is not authenticated', () => {
     isAuthenticatedFunction.mockReturnValue(false);
     expect(render().containsMatchingElement(
-      <Redirect to={{ pathname: '/', state: { from: defaultProps.routeProps.location } }} />,
+      <Redirect to={{ pathname: LOGIN_PAGE, state: { from: defaultProps.routeProps.location } }} />,
     )).toBeTruthy();
   });
 });
